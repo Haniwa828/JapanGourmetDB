@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ドキュメント</title>
+
+    <!-- cssのインポート -->
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/test.css" />
+
+    <!-- スライドショー用cdn -->
+    <!-- <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    /> -->
+
+    <!--Bootstrap-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <link rel="shortcut icon" href="/photo/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/photo/favicon.ico" type="image/x-icon" />
+  </head>
+
+  <body onload="announce()">
+    <div class="hamburger-menu">
+      <input type="checkbox" id="menu-btn-check" />
+      <label for="menu-btn-check" class="menu-btn"><span></span></label>
+
+      <div class="menu-content">
+        <ul>
+          <li>
+            <a href="/index.html"  style="font-size: large;">ホーム</a>
+        </li>
+        <li>
+            <div class="cannot" style="font-size: large;">店舗投稿</div>
+        </li>
+        <li>
+            <div class="cannot" style="font-size: large;">レビュー投稿</div>
+        </li>
+        <li>
+            <div class="cannot" style="font-size: large;">意見/修正依頼</div>
+        </li>
+        <li>
+            <div class="cannot" style="font-size: large;">ヘルプ</div>
+        </li>
+        <li>
+            <div class="cannot" style="font-size: large;">クレジット</div>
+        </li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div style="font-size: large; font-weight: bold; background-color: #000066; color: aliceblue; text-align: center;">
+      <img style="height: 50px;" src="/photo/icon.png" style="width: 15vw;"> マレーシアグルメDB(仮)
+    </div>
+
+    <div id="announceList"></div>
+    <div id="announceDisplay" style="margin: 10px 10px 10px 10px"></div>
+
+    <div id="announceArea" style="margin: 10px 10px 10px 10px; border: 1px solid; border-color: #7f7f7f;">
+      <div style="border: 1px solid; border-color: #898989;">
+          最新のお知らせ
+      </div>        
+    </div>
+
+    <!-- jQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <!-- スライドショー用cdn -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> -->
+
+    <!-- JS -->
+    <script type="text/javascript" src="/JavaScript/script.js"></script>
+    <!-- <script type="text/javascript" src="/JavaScript/forDetail.js"></script> -->
+    <script type="text/javascript" src="/JavaScript/tabs.js"></script>
+  </body>
+</html>
