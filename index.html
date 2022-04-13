@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ドキュメント</title>
+    
+    <!-- cssのインポート -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/test.css">
+
+    <!-- スライドショー用cdn -->
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"> -->
+
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="shortcut icon" href="/photo/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/photo/favicon.ico" type="image/x-icon">
+    
+</head>
+
+<!-- onload="shops()" -->
+<body onload="shops()">
+    <!-- オーバーレイ -->
+  <div id="overlay" class="overlay"></div>
+  <!-- モーダルウィンドウ1 -->
+    <div class="modal-window" data-id="modal1" id="modal1" style="overflow: auto;">
+        <p>目的の店名のコピーが推奨されます</p>
+        <input id="searchShop" type="text">
+        <button onclick="searchShop('searchShop')">検索</button>
+        <br><br>
+        <div id="forReviewLink1" style="height: 55%; overflow: auto;"></div>
+        <br>
+        <button class="js-close button-close button">戻る</button>
+        <a class="button" href="https://forms.gle/kseH3qBEfv7H4TQQ6" target="_blank">進む</a>
+    </div>
+   <!-- モーダルウィンドウ2 -->
+    <div class="modal-window" data-id="modal2">
+        <p>既出か確認して下さい</p>
+        <input id="searchShops" type="text">
+        <button onclick="searchShop('searchShops')">検索</button>
+        <br><br>
+        <div id="forReviewLink2" style="height: 55%; overflow: auto;"></div>
+        <br>
+        <button class="js-close button-close button">戻る</button>
+        <a class="button" href="https://forms.gle/Zhvo9QcPjUVPpQyj6" target="_blank">進む</a>
+    </div>
+
+
+    <div style="font-size: large; font-weight: bold; background-color: #000066; color: aliceblue; text-align: center;">
+        <img style="height: 50px;" src="/photo/icon.png" style="width: 15vw;"> 日本グルメDB(仮)
+    </div>
+
+    <div class="hamburger-menu">
+        <input type="checkbox" id="menu-btn-check">
+        <label for="menu-btn-check" class="menu-btn"><span></span></label>
+  
+        <div class="menu-content">
+          <ul>
+              <li>
+                  <a href="/html/announce.html?announceId=-1"  style="font-size: large;">お知らせ</a>
+              </li>
+              <li>
+                  <div class="js-open button-open" data-id="2" style="font-size: large;">新規店舗投稿</div>
+              </li>
+              <li>
+                  <div class="js-open button-open" data-id="1" style="font-size: large;">レビュー投稿</div>
+              </li>
+              <li>
+                  <div class="cannot" style="font-size: large;">意見/修正依頼</div>
+              </li>
+              <li>
+                  <div class="cannot" style="font-size: large;">ヘルプ</div>
+              </li>
+              <li>
+                  <div class="cannot" style="font-size: large;">クレジット</div>
+              </li>
+          </ul>
+        </div>
+    </div>
+
+
+    <div id="announceArea" style="margin: 10px 10px 10px 10px; border: 1px solid; border-color: #898989;">
+        <div style="border: 1px solid; border-color: #898989;">
+            最新のお知らせ
+        </div>        
+    </div>
+
+    <!-- <button class="js-open button-open button" data-id="2" style="font-size: small;">店舗追加</button>
+    <button class="js-open button-open button" data-id="1" style="font-size: small;">レビュー</button> -->
+
+    <div id="body" style="margin: 10px 10px 10px 10px;">
+        <div>
+            <input id="search" type="text">
+            <button onclick="search()" class="button">検索</button>
+
+            <span>
+                <button onclick="filterOpen()" class="button">詳細設定</button>
+            </span>
+        </div>
+
+        <div id="filter" style="display: none; padding: 10px; border: 1px solid; border-color: #dcdcdc; border-radius: 5px; background-color: #fffafa;">
+            <div style="margin-bottom: 5px;">
+                <div>
+                    ソート：
+                </div>
+                <div>
+                    <label>
+                        <input type="radio" name="sort" value="最終更新日" checked> 最終更新日　
+                    </label>
+                    <label>
+                        <input type="radio" name="sort" value="店名(a-z)"> 店名(a-z)　
+                    </label>
+                    <label>
+                        <input type="radio" name="sort" value="店名(z-a)"> 店名(z-a)　
+                    </label>
+                    <label>
+                        <input type="radio" name="sort" value="レビュー"> レビュー　
+                    </label>
+                </div>
+            </div>
+
+            <div style="margin-bottom: 5px;">
+                <div>
+                    カテゴリー：
+                </div>
+                <div>
+                    <label>
+                        <input type="checkbox" name="category" value="和食" checked> 和食　
+                    </label>
+                    <label>
+                        <input type="checkbox" name="category" value="中華" checked> 中華　
+                    </label>
+                    <label>
+                        <input type="checkbox" name="category" value="イタリアン" checked> イタリアン　
+                    </label>
+                    <label>
+                        <input type="checkbox" name="category" value="パン" checked> パン　
+                    </label>
+                    <label>
+                        <input type="checkbox" name="category" value="ラーメン" checked> ラーメン　
+                    </label>
+                    <label>
+                        <input type="checkbox" name="category" value="その他" checked> その他　
+                    </label>
+                </div>
+            </div>
+
+            <div style="margin-bottom: 5px;">
+                <div>
+                    営業日：
+                </div>
+                <div>
+                    <label>
+                        <input type="checkbox" name="operateDay" value="月曜" checked> 月曜　
+                    </label>
+                    <label>
+                        <input type="checkbox" name="operateDay" value="火曜" checked> 火曜　
+                    </label>
+                    <label>
+                        <input type="checkbox" name="operateDay" value="水曜" checked> 水曜　
+                    </label>
+                    <label>
+                        <input type="checkbox" name="operateDay" value="木曜" checked> 木曜　
+                    </label>
+                    <label>
+                        <input type="checkbox" name="operateDay" value="金曜" checked> 金曜　
+                    </label>
+                    <label>
+                        <input type="checkbox" name="operateDay" value="土曜" checked> 土曜　
+                    </label>
+                    <label>
+                        <input type="checkbox" name="operateDay" value="日曜" checked> 日曜　
+                    </label>
+                </div>
+            </div>
+
+            <div style="margin-bottom: 5px;">
+                <div>
+                    金額：
+                </div>
+                <div>
+                    <label>
+                        <input type="checkbox" name="cost" value="～￥1,000" checked> ～￥1,000　
+                    </label>
+                    <label>
+                        <input type="checkbox" name="cost" value="￥1,001～￥3,000" checked> ￥1,001～￥3,000　
+                    </label>
+                    <label>
+                        <input type="checkbox" name="cost" value="￥3,001～￥6,000" checked> ￥3,001～￥6,000　
+                    </label>
+                    <label>
+                        <input type="checkbox" name="cost" value="￥6,001～￥1,0000" checked> ￥6,001～￥1,0000　
+                    </label>
+                    <label>
+                        <input type="checkbox" name="cost" value="￥10,001～" checked> ￥10,001～　
+                    </label>
+                </div>
+            </div>
+
+            <div style="margin-bottom: 5px;">
+                <div>
+                    形式：
+                </div>
+                <div>
+                    <label>
+                        <input type="checkbox" name="atmosphere" value="カフェ" checked>カフェ　
+                    </label>
+                    <label>
+                        <input type="checkbox" name="atmosphere" value="居酒屋" checked>居酒屋　
+                    </label>
+                    <label>
+                        <input type="checkbox" name="atmosphere" value="バー" checked>バー　
+                    </label>
+                    <label>
+                        <input type="checkbox" name="atmosphere" value="フードコート" checked>フードコート　
+                    </label>
+                    <label>
+                        <input type="checkbox" name="atmosphere" value="ファミリー" checked>ファミリー　
+                    </label>
+                    <label>
+                        <input type="checkbox" name="atmosphere" value="キッチンカー" checked>キッチンカー　
+                    </label>
+                    <label>
+                        <input type="checkbox" name="atmosphere" value="ファストフード" checked>ファストフード　
+                    </label>
+                    <label>
+                        <input type="checkbox" name="atmosphere" value="フォーマル" checked>フォーマル　
+                    </label>
+                </div>
+            </div>
+
+            <div style="margin-bottom: 5px;">
+                <div>
+                    地域：
+                </div>
+                <div>
+                    <label>
+                        <input type="checkbox" name="area" value="全地域" checked>全地域　
+                    </label>
+                    <label>
+                        <input type="checkbox" name="area" value="大阪" checked>大阪　
+                    </label>
+                    <label>
+                        <input type="checkbox" name="area" value="東京" checked>東京　
+                    </label>
+                    <label>
+                        <input type="checkbox" name="area" value="千葉" checked>千葉　
+                    </label>
+                    <label>
+                        <input type="checkbox" name="area" value="福井" checked>福井　
+                    </label>
+                    <label>
+                        <input type="checkbox" name="area" value="福岡" checked>福岡　
+                    </label>
+                </div>
+            </div>
+
+            <button id="apply" onclick="applyPress()" class="button">適用</button>
+        </div>
+
+        <div id="shop"></div>
+    </div>
+
+    <!-- <div id="footer">
+        フッター
+    </div> -->
+
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<!-- スライドショー用cdn -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> -->
+
+<!-- JS -->
+<script type="text/javascript" src="/JavaScript/script.js"></script>
+<!-- <script type="text/javascript" src="/JavaScript/forDetail.js"></script> -->
+<script type="text/javascript" src="/JavaScript/tabs.js"></script>
+
+</body>
+
+</html>
