@@ -123,7 +123,7 @@ function shops(){ //　メインページでの要素配置
             getAnnounce[i].タイムスタンプ = new Date(getAnnounce[i].タイムスタンプ);
             getAnnounce[i].タイムスタンプ = getAnnounce[i].タイムスタンプ.toISOString().substr(0, 10);
             $('#announceArea').append(' \
-            <div style="border: 1px solid; border-color: #dcdcdc;"><a href="announce.html?announceId='+ i +'" style="display: flex;"><span style="word-break: break-all;">《'+ getAnnounce[i].カテゴリー +'》'+ getAnnounce[i].タイトル +'</span><span style="minwidth: 10px">&ensp;</span><span style="font-size: small; margin-left: auto; min-width: 70px">'+ getAnnounce[i].タイムスタンプ +'</span></a></div> \
+            <div style="border: 1px solid; border-color: #dcdcdc;"><a href="https://haniwa828.github.io/JapanGourmetDB/html/announce.html?announceId='+ i +'" style="display: flex;"><span style="word-break: break-all;">《'+ getAnnounce[i].カテゴリー +'》'+ getAnnounce[i].タイトル +'</span><span style="minwidth: 10px">&ensp;</span><span style="font-size: small; margin-left: auto; min-width: 70px">'+ getAnnounce[i].タイムスタンプ +'</span></a></div> \
             ')
         }
 
