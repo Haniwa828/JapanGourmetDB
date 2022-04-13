@@ -69,7 +69,7 @@ function shops(){ //　メインページでの要素配置
                         (getShopArray[i].写真)[j] = 'https://drive.google.com/uc?export=view&id=' + (getShopArray[i].写真)[j]
                     }
                     else{
-                        (getShopArray[i].写真)[j] = '/photo/noImage.png'
+                        (getShopArray[i].写真)[j] = 'https://haniwa828.github.io/JapanGourmetDB/photo/noImage.png'
                     }
                 }
 
@@ -349,8 +349,8 @@ function shopComponent(array){ // 店ブロック挿入用関数
     let tempoArray = JSON.parse(JSON.stringify(array));
 
     for(let i = 0; i < tempoArray.length; i++){
-        tempoArray[i].ジャンル = tempoArray[i].ジャンル.replace('和食', '/photo/japan.png')
-        tempoArray[i].ジャンル = tempoArray[i].ジャンル.replace('中華', '/photo/china.png')
+        tempoArray[i].ジャンル = tempoArray[i].ジャンル.replace('和食', 'https://haniwa828.github.io/JapanGourmetDB/photo/japan.png')
+        tempoArray[i].ジャンル = tempoArray[i].ジャンル.replace('中華', 'https://haniwa828.github.io/JapanGourmetDB/photo/china.png')
 
         tempoArray[i].ジャンル = tempoArray[i].ジャンル.split(",");
     }
