@@ -1,7 +1,7 @@
 //GASのAPIのURL
 const endpointShops = "https://script.google.com/macros/s/AKfycbysJrQRJISreY5tBtkxY404ITO8tzlizB3jYwDg1HlQhS6Iu3KCksCvXOM63WxmHtN71A/exec";
 const endpointReviews = "https://script.google.com/macros/s/AKfycbyktHablfSrUPFfgGYWzYI1w3YOR8XFp7P06ZumbMmXx4rbjDFQ2vvcBc_lr3d2QlXAXg/exec";
-const endpointAnnounce = "https://script.google.com/macros/s/AKfycbwmEMIL38TrTTdRMzjSEpxQW_nT64C9y9oxmNvfndX2HC0X0X7dBM2P4B-8Y_tg7iWv/exec"
+const endpointAnnounce = "https://script.google.com/macros/s/AKfycbwmEMIL38TrTTdRMzjSEpxQW_nT64C9y9oxmNvfndX2HC0X0X7dBM2P4B-8Y_tg7iWv/exec";
 
 
 let shopArray = []
