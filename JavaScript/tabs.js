@@ -10,12 +10,12 @@ function announce(){
 
         for(let i = getAnnounce.length - 1; i >= 0; i--){
             getAnnounce[i].タイムスタンプ = new Date(getAnnounce[i].タイムスタンプ);
-            getAnnounce[i].タイムスタンプ = getAnnounce[i].タイムスタンプ.toISOString().substr(0, 19);
-            getAnnounce[i].タイムスタンプ = getAnnounce[i].タイムスタンプ.replace('T', ' ')
+            getAnnounce[i].タイムスタンプ = getAnnounce[i].タイムスタンプ.toISOString().substr(0, 10);
+
+            getAnnounce[param].本文　= getAnnounce[param].本文.replace(/\r?\n/g, '<br>')
         }
         
         if(param != -1){
-          console.log(getAnnounce[param].本文)
           $('#announceDisplay').append(' \
           <div>'+ getAnnounce[param].タイムスタンプ +'</div> \
           <div style="font-size: large;">《'+ getAnnounce[param].カテゴリー +'》'+ getAnnounce[param].タイトル +'</div> \
