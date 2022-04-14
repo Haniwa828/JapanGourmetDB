@@ -128,7 +128,7 @@ function shops(){ //　メインページでの要素配置
         }
 
         $('#announceArea').append(' \
-        <div style="border: 1px solid; border-color: #dcdcdc; text-align: right;"><a href="announce.html?announceId=-1">»全てのお知らせ</a></div> \
+        <div style="border: 1px solid; border-color: #dcdcdc; text-align: right;"><a href="https://haniwa828.github.io/JapanGourmetDB/html/announce.html?announceId=-1">»全てのお知らせ</a></div> \
         ')
     });
 }
