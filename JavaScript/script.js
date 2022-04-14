@@ -512,7 +512,7 @@ function detailComponent(id, rArray, rsArray, sArray){
         <div id="explain" style="font-size: large;" style="word-break: break-all;"> \
             説明： \
             <br> \
-            '+ sArray[id].説明 +' \
+            '+ sArray[id].説明.replace(/\r?\n/g, '<br>') +' \
         </div> \
         <br> \
         <div style="margin: 0px 0px 10px 0px;"> \
