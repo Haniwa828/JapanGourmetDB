@@ -243,9 +243,12 @@ function applyPress(){
                                     let tempoStr = oriArray[i].ジャンル.slice();
 
                                     tempoStr = tempoStr.replace('和食', '');
-                                    tempoStr = tempoStr.replace('中華', '');
+                                    tempoStr = tempoStr.replace('喫茶', '');
+                                    tempoStr = tempoStr.replace('洋食', '');
                                     tempoStr = tempoStr.replace('イタリアン', '');
-                                    tempoStr = tempoStr.replace('パン', '');
+                                    tempoStr = tempoStr.replace('創作料理', '');
+                                    tempoStr = tempoStr.replace('デザート', '');
+                                    tempoStr = tempoStr.replace('喫茶', '');
                                     tempoStr = tempoStr.replace('ラーメン', '');
                                     tempoStr = tempoStr.replace(/, /g, '');
 
