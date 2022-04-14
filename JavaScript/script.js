@@ -452,6 +452,23 @@ function searchShop(id){
             }
         }
     }
+    
+    let block = 0;
+    for(let i = 0; i < shopNames.length; i++){ // それぞれの要素に対して検索
+        if(document.getElementById('shopName' + i).style.display == 'block'){ // 一致する要素がある時ー!
+            block++;
+
+            console.log(i)
+            break;
+        }
+    }
+
+    if(block == 0){
+        document.getElementById('noMatch').style.display = 'block';
+    }
+    else{
+        document.getElementById('noMatch').style.display = 'none';
+    }
 }
 
 
@@ -585,6 +602,10 @@ $(function () {
             <div id="shopName'+ i +'">'+ shopArray[i].店名 +'</div> \
             ')
         }
+        
+        $('#forReviewLink' + id4form).append(' \
+            <div id="noMatch" style="display: none">一致する結果はありませんでした</div> \
+        ')
     });
     // オーバーレイクリックでもモーダルを閉じるように
     $('.js-close , #overlay').click(function () {
