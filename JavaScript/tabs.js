@@ -15,6 +15,7 @@ function announce(){
         }
         
         if(param != -1){
+          console.log(getAnnounce[param].本文)
           $('#announceDisplay').append(' \
           <div>'+ getAnnounce[param].タイムスタンプ +'</div> \
           <div style="font-size: large;">《'+ getAnnounce[param].カテゴリー +'》'+ getAnnounce[param].タイトル +'</div> \
