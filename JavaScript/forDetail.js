@@ -120,7 +120,10 @@ function shopDetailComponent(array, id){
 
         console.log(array, id)
     
-        review = array[id].レビュー;
+        if(id != -1){
+            review = array[id].レビュー;
+        }
+        
         review = review - review%0.5;
 
 
