@@ -118,13 +118,13 @@ function shopDetailComponent(array, id){
     else{ // ある時ー!
         let review = 0;
 
+        console.log(array)
         if(array[id].length != 0){
             review = array[id].レビュー;
         }
             
         review = review - review%0.5;
 
-        console.log(array[id].写真)
 
         $('#shop').append(' \
         <div id="shop' + id + '" class="shops" style="display: block; background-color: #fffafa; text-align: left; border: 1px solid; border-color: #dcdcdc; border-radius: 5px; width: '+ width +'; margin: 10px 10px 10px 10px; padding: 10px; position: relative;"> \
