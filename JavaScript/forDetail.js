@@ -1,6 +1,9 @@
 function shopsDetail(){ //　メインページでの要素配置
     let param = location.search
     param = getParam('shopName')
+    
+    param = param.replace('%20', ' ');
+    param = param.replace('%3%80%80', '　');
 
     fetch(endpointReviews) // レビュー取得
     .then(response => response.json())
