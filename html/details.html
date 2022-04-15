@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>日本グルメDB(仮)</title>
+    <title>マレーシアグルメDB(仮)</title>
 
     <!-- cssのインポート -->
     <link rel="stylesheet" href="https://haniwa828.github.io/JapanGourmetDB/css/style.css" />
@@ -24,7 +24,33 @@
     <link rel="icon" href="https://haniwa828.github.io/JapanGourmetDB/photo/favicon.ico" type="image/x-icon">
   </head>
 
-  <body onload="announce()">
+  <body onload="shopsDetail()">
+    <!-- オーバーレイ -->
+  <div id="overlay" class="overlay"></div>
+  <!-- モーダルウィンドウ1 -->
+    <div class="modal-window" data-id="modal1" id="modal1" style="overflow: auto;">
+        <p>目的の店名のコピーが推奨されます</p>
+        <input id="searchShop" type="text">
+        <button onclick="searchShop('searchShop')">検索</button>
+        <br><br>
+        <div id="forReviewLink1" style="height: 55%; overflow: auto;"></div>
+        <br>
+        <button class="js-close button-close button">戻る</button>
+        <a class="button" href="https://forms.gle/W1LwQ7BanLnopnHY9" target="_blank">進む</a>
+    </div>
+   <!-- モーダルウィンドウ2 -->
+    <div class="modal-window" data-id="modal2">
+        <p>既出か確認して下さい</p>
+        <input id="searchShops" type="text">
+        <button onclick="searchShop('searchShops')">検索</button>
+        <br><br>
+        <div id="forReviewLink2" style="height: 55%; overflow: auto;"></div>
+        <br>
+        <button class="js-close button-close button">戻る</button>
+        <a class="button" href="https://forms.gle/3vwKDFyDjBiU6ypg9" target="_blank">進む</a>
+    </div>
+
+
     <div class="hamburger-menu">
       <input type="checkbox" id="menu-btn-check" />
       <label for="menu-btn-check" class="menu-btn"><span></span></label>
@@ -35,10 +61,10 @@
             <a href="https://haniwa828.github.io/JapanGourmetDB/index.html"  style="font-size: large;">ホーム</a>
         </li>
         <li>
-            <div class="cannot" style="font-size: large;">店舗投稿</div>
+            <div class="js-open button-open" data-id="2" style="font-size: large;">店舗投稿</div>
         </li>
         <li>
-            <div class="cannot" style="font-size: large;">レビュー投稿</div>
+            <div class="js-open button-open" data-id="1" style="font-size: large;">レビュー投稿</div>
         </li>
         <li>
             <div class="cannot" style="font-size: large;">意見/修正依頼</div>
@@ -58,14 +84,7 @@
       <img style="height: 50px;" src="https://haniwa828.github.io/JapanGourmetDB/photo/icon.png" style="width: 15vw;"> 日本グルメDB(仮)
     </div>
 
-    <div id="announceList"></div>
-    <div id="announceDisplay" style="margin: 10px 10px 10px 10px"></div>
-
-    <div id="announceArea" style="margin: 10px 10px 10px 10px; border: 1px solid; border-color: #7f7f7f;">
-      <div style="border: 1px solid; border-color: #898989;">
-          最新のお知らせ
-      </div>        
-    </div>
+    <div id="shop"></div>
 
     <!-- jQuery -->
     <script
@@ -73,12 +92,10 @@
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"
     ></script>
-    <!-- スライドショー用cdn -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> -->
 
     <!-- JS -->
     <script type="text/javascript" src="https://haniwa828.github.io/JapanGourmetDB/JavaScript/script.js"></script>
-    <script type="text/javascript" src="https://haniwa828.github.io/JapanGourmetDB/JavaScript/forDetail.js"></script>
     <script type="text/javascript" src="https://haniwa828.github.io/JapanGourmetDB/JavaScript/tabs.js"></script>
+    <script type="text/javascript" src="https://haniwa828.github.io/JapanGourmetDB/JavaScript/forDetail.js"></script>
   </body>
 </html>

@@ -535,6 +535,9 @@ function detailComponent(id, rArray, rsArray, sArray){
             '+ sArray[id].説明.replace(/\r?\n/g, '<br>') +' \
         </div> \
         <br> \
+        <a class="button" href="/html/details.html?shopName='+ sArray[id].店名 +'" target="_blank">別ページで開く</a> \
+        <br> \
+        <br> \
         <div style="margin: 0px 0px 10px 0px;"> \
             レビュー： \
         </div> \
