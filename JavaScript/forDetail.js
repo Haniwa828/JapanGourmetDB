@@ -118,11 +118,9 @@ function shopDetailComponent(array, id){
     else{ // ある時ー!
         let review = 0;
 
-        console.log(array)
-        if(array[id].length != 0){
-            review = array[id].レビュー;
-        }
-            
+        console.log(array, id)
+    
+        review = array[id].レビュー;
         review = review - review%0.5;
 
 
