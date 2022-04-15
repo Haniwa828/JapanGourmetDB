@@ -118,8 +118,10 @@ function shopDetailComponent(array, id){
     else{ // ある時ー!
         let review = 0;
 
-        review = array[id].レビュー;
-    
+        if(array.length != 0){
+            review = array[id].レビュー;
+        }
+            
         review = review - review%0.5;
 
         console.log(array[id].写真)
