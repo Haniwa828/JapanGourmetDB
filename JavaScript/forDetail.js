@@ -133,6 +133,9 @@ function shopDetailComponent(array, id){
                 <div style="font-size: small; color: gray;"> \
                     '+ array[id].形式+' \
                 </div> \
+                <div style="font-size: small; color: gray;"> \
+                    酒：'+ array[i].酒の提供+' \
+                </div> \
                 <div style="font-size: x-large; font-weight: bold; word-break: break-all; color: black"> \
                     '+ array[id].店名 +' \
                 </div> \

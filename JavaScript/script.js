@@ -201,6 +201,7 @@ function applyPress(){
     let selectedCost = [];
     let selectedAtmosphere = [];
     let selectedArea = [];
+    let selectedAlcohol = [];
     let selectedSort = '';
 
     let categoryCategory = document.getElementsByName("category");
@@ -208,6 +209,7 @@ function applyPress(){
     let categoryCost = document.getElementsByName("cost");
     let categoryAtmosphere = document.getElementsByName("atmosphere");
     let categoryArea = document.getElementsByName("area");
+    let categoryAlcohol = document.getElementsByName("alcohol");
     let categorySort = document.getElementsByName("sort");
 
     checkCheck(selectedCategory, categoryCategory);
@@ -215,6 +217,7 @@ function applyPress(){
     checkCheck(selectedCost, categoryCost);
     checkCheck(selectedAtmosphere, categoryAtmosphere);
     checkCheck(selectedArea, categoryArea);
+    checkCheck(selectedAlcohol, categoryAlcohol);
     for (let i = 0; i < categorySort.length; i++){
         if (categorySort.item(i).checked){
             selectedSort = categorySort.item(i).value;
@@ -233,28 +236,40 @@ function applyPress(){
             for(let l = 0; l < selectedCost.length; l++){
                 for(let m = 0; m < selectedAtmosphere.length; m++){
                     for(let o = 0; o < selectedArea.length; o++){
-                        for(let i = 0; i < oriArray.length; i++){ // それぞれの要素に対して検索
-                            if((oriArray[i].定休日).indexOf(selectedOperate[k]) != -1 && (oriArray[i].昼営業の金額目安).indexOf(selectedCost[l]) != -1 && (oriArray[i].夜営業の金額目安).indexOf(selectedCost[l]) != -1 && (oriArray[i].形式).indexOf(selectedAtmosphere[m]) != -1 && ((oriArray[i].住所.toUpperCase()).indexOf(selectedArea[o]) != -1 || selectedArea[o] == "全地域") && document.getElementById('shop' + i).style.display == 'none'){ // 一致する要素がある時ー!
-                                if(((oriArray[i].ジャンル).indexOf(selectedCategory[j]) != -1)){
-                                    target = document.getElementById('shop' + i);
-                                    target.style.display = 'block' // 要素ブロックを表示
-                                }
-                                else if(selectedCategory[j] == 'その他'){
-                                    let tempoStr = oriArray[i].ジャンル.slice();
-
-                                    tempoStr = tempoStr.replace('和食', '');
-                                    tempoStr = tempoStr.replace('喫茶', '');
-                                    tempoStr = tempoStr.replace('洋食', '');
-                                    tempoStr = tempoStr.replace('イタリアン', '');
-                                    tempoStr = tempoStr.replace('創作料理', '');
-                                    tempoStr = tempoStr.replace('デザート', '');
-                                    tempoStr = tempoStr.replace('喫茶', '');
-                                    tempoStr = tempoStr.replace('ラーメン', '');
-                                    tempoStr = tempoStr.replace(/, /g, '');
-
-                                    if(tempoStr != ''){
+                        for(let p = 0; p < selectedArea.length; p++){
+                            for(let i = 0; i < oriArray.length; i++){ // それぞれの要素に対して検索
+                                if(
+                                    (oriArray[i].定休日).indexOf(selectedOperate[k]) != -1 
+                                    && (oriArray[i].昼営業の金額目安).indexOf(selectedCost[l]) != -1 
+                                    && (oriArray[i].夜営業の金額目安).indexOf(selectedCost[l]) != -1 
+                                    && (oriArray[i].形式).indexOf(selectedAtmosphere[m]) != -1 
+                                    && (
+                                        (oriArray[i].住所.toUpperCase()).indexOf(selectedArea[o]) != -1 
+                                        || selectedArea[o] == "全地域"
+                                        ) 
+                                    && (oriArray[i].酒の提供).indexOf(selectedAlcohol[p]) != -1 
+                                    && document.getElementById('shop' + i).style.display == 'none'){ // 一致する要素がある時ー!
+                                    if(((oriArray[i].ジャンル).indexOf(selectedCategory[j]) != -1)){
                                         target = document.getElementById('shop' + i);
                                         target.style.display = 'block' // 要素ブロックを表示
+                                    }
+                                    else if(selectedCategory[j] == 'その他'){
+                                        let tempoStr = oriArray[i].ジャンル.slice();
+
+                                        tempoStr = tempoStr.replace('和食', '');
+                                        tempoStr = tempoStr.replace('喫茶', '');
+                                        tempoStr = tempoStr.replace('洋食', '');
+                                        tempoStr = tempoStr.replace('イタリアン', '');
+                                        tempoStr = tempoStr.replace('創作料理', '');
+                                        tempoStr = tempoStr.replace('デザート', '');
+                                        tempoStr = tempoStr.replace('喫茶', '');
+                                        tempoStr = tempoStr.replace('ラーメン', '');
+                                        tempoStr = tempoStr.replace(/, /g, '');
+
+                                        if(tempoStr != ''){
+                                            target = document.getElementById('shop' + i);
+                                            target.style.display = 'block' // 要素ブロックを表示
+                                        }
                                     }
                                 }
                             }
@@ -383,6 +398,9 @@ function shopComponent(array){ // 店ブロック挿入用関数
                     <div style="width: '+ (2*width/3 - 70) +'px;"> \
                         <div style="font-size: small; color: gray;"> \
                             '+ array[i].形式+' \
+                        </div> \
+                        <div style="font-size: small; color: gray;"> \
+                            酒：'+ array[i].酒の提供+' \
                         </div> \
                         <div style="font-size: x-large; font-weight: bold; word-break: break-all;"> \
                             '+ array[i].店名 +' \
