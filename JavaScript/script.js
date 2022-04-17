@@ -225,6 +225,7 @@ function applyPress(){
     }
 
     sort(selectedSort);
+    console.log(selectedAlcohol)
 
     for(let i = 0; i < oriArray.length; i++){ // 一旦全ての要素ブロックを非表示
         let target = document.getElementById('shop' + i);
