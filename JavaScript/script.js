@@ -234,7 +234,7 @@ function applyPress(){
                 for(let m = 0; m < selectedAtmosphere.length; m++){
                     for(let o = 0; o < selectedArea.length; o++){
                         for(let i = 0; i < oriArray.length; i++){ // それぞれの要素に対して検索
-                            if((oriArray[i].定休日).indexOf(selectedOperate[k]) != -1 && (oriArray[i].金額).indexOf(selectedCost[l]) != -1 && (oriArray[i].形式).indexOf(selectedAtmosphere[m]) != -1 && ((oriArray[i].住所.toUpperCase()).indexOf(selectedArea[o]) != -1 || selectedArea[o] == "全地域") && document.getElementById('shop' + i).style.display == 'none'){ // 一致する要素がある時ー!
+                            if((oriArray[i].定休日).indexOf(selectedOperate[k]) != -1 && (oriArray[i].昼営業の金額目安).indexOf(selectedCost[l]) != -1 && (oriArray[i].夜営業の金額目安).indexOf(selectedCost[l]) != -1 && (oriArray[i].形式).indexOf(selectedAtmosphere[m]) != -1 && ((oriArray[i].住所.toUpperCase()).indexOf(selectedArea[o]) != -1 || selectedArea[o] == "全地域") && document.getElementById('shop' + i).style.display == 'none'){ // 一致する要素がある時ー!
                                 if(((oriArray[i].ジャンル).indexOf(selectedCategory[j]) != -1)){
                                     target = document.getElementById('shop' + i);
                                     target.style.display = 'block' // 要素ブロックを表示
@@ -419,7 +419,17 @@ function shopComponent(array){ // 店ブロック挿入用関数
 function check(originalArray, word){ // 一致する要素の検索
     for(let j = 0; j < word.length; j++){ // それぞれのwordで検索
         for(let i = 0; i < originalArray.length; i++){ // それぞれの要素に対して検索
-            if(((originalArray[i].ジャンル).indexOf(word[j]) != -1 || (originalArray[i].店名.toUpperCase()).indexOf(word[j].toUpperCase()) != -1 || (originalArray[i].形式.toUpperCase()).indexOf(word[j].toUpperCase()) != -1 || (originalArray[i].説明).indexOf(word[j]) != -1) && document.getElementById('shop' + i).style.display == 'block'){ // 一致する要素がある時ー!
+            if(
+                (
+                    (originalArray[i].ジャンル).indexOf(word[j]) != -1 
+                    || (originalArray[i].店名.toUpperCase()).indexOf(word[j].toUpperCase()) != -1 
+                    || (originalArray[i].形式).indexOf(word[j]) != -1 
+                    || (originalArray[i].説明.toUpperCase()).indexOf(word[j].toUpperCase()) != -1 
+                    || (originalArray[i].住所.toUpperCase()).indexOf(word[j].toUpperCase()) != -1 
+                    // || (originalArray[i].説明).indexOf(word[j]) != -1
+                ) 
+                && document.getElementById('shop' + i).style.display == 'block'
+                ){ // 一致する要素がある時ー!
                 target = document.getElementById('shop' + i);
                 target.style.display = 'block' // 要素ブロックを表示
             }
@@ -507,7 +517,10 @@ function detailComponent(id, rArray, rsArray, sArray){
             営業日：'+ sArray[id].定休日 +' \
         </div> \
         <div id="address" style="word-break: break-all;"> \
-            金額目安：'+ sArray[id].金額 +' \
+            金額目安(昼)：'+ sArray[id].昼営業の金額目安 +' \
+        </div> \
+        <div id="address" style="word-break: break-all;"> \
+            金額目安(夜)：'+ sArray[id].夜営業の金額目安 +' \
         </div> \
         <br> \
         <div id="address" style="word-break: break-all;"> \
