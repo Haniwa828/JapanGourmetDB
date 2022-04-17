@@ -399,9 +399,6 @@ function shopComponent(array){ // 店ブロック挿入用関数
                         <div style="font-size: small; color: gray;"> \
                             '+ array[i].形式+' \
                         </div> \
-                        <div style="font-size: small; color: gray;"> \
-                            酒：'+ array[i].酒の提供+' \
-                        </div> \
                         <div style="font-size: x-large; font-weight: bold; word-break: break-all;"> \
                             '+ array[i].店名 +' \
                         </div> \
@@ -560,6 +557,9 @@ function detailComponent(id, rArray, rsArray, sArray){
             電話番号：'+ sArray[id].電話番号 +' \
         </div> \
         <br> \
+        <div style="font-size: small; color: gray;"> \
+            酒：'+ sArray[id].酒の提供+' \
+        </div> \
         <div id="explain" style="font-size: large;" style="word-break: break-all;"> \
             説明： \
             <br> \
