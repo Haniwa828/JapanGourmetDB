@@ -225,7 +225,6 @@ function applyPress(){
     }
 
     sort(selectedSort);
-    console.log(selectedAlcohol)
 
     for(let i = 0; i < oriArray.length; i++){ // 一旦全ての要素ブロックを非表示
         let target = document.getElementById('shop' + i);
@@ -237,12 +236,14 @@ function applyPress(){
             for(let l = 0; l < selectedCost.length; l++){
                 for(let m = 0; m < selectedAtmosphere.length; m++){
                     for(let o = 0; o < selectedArea.length; o++){
-                        for(let p = 0; p < selectedArea.length; p++){
+                        for(let p = 0; p < selectedAlcohol.length; p++){
                             for(let i = 0; i < oriArray.length; i++){ // それぞれの要素に対して検索
                                 if(
                                     (oriArray[i].定休日).indexOf(selectedOperate[k]) != -1 
-                                    && (oriArray[i].昼営業の金額目安).indexOf(selectedCost[l]) != -1 
-                                    && (oriArray[i].夜営業の金額目安).indexOf(selectedCost[l]) != -1 
+                                    && (
+                                        (oriArray[i].昼営業の金額目安).indexOf(selectedCost[l]) != -1 
+                                        || (oriArray[i].夜営業の金額目安).indexOf(selectedCost[l]) != -1 
+                                    )
                                     && (oriArray[i].形式).indexOf(selectedAtmosphere[m]) != -1 
                                     && (
                                         (oriArray[i].住所.toUpperCase()).indexOf(selectedArea[o]) != -1 
