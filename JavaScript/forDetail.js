@@ -153,7 +153,10 @@ function shopDetailComponent(array, id){
                     営業日：'+ array[id].定休日 +' \
                 </div> \
                 <div id="address" style="word-break: break-all;"> \
-                    金額目安：'+ array[id].金額 +' \
+                    金額目安(昼)：'+ array[id].昼営業の金額目安 +' \
+                </div> \
+                <div id="address" style="word-break: break-all;"> \
+                    金額目安(夜)：'+ array[id].夜営業の金額目安 +' \
                 </div> \
                 <br> \
                 <div id="address" style="word-break: break-all;"> \
