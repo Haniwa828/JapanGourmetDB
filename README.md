@@ -1,6 +1,7 @@
 # JapanGourmetDB
 
 本コードはjQueryとBootstrapのライブラリを使用して作成されています(ライセンスは後述)。
+その他コード及び素材の著作権は製作者(Haniwa828)に帰属します。
 
 
 
