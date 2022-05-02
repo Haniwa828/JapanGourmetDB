@@ -262,7 +262,6 @@ function applyPress(){
                                         tempoStr = tempoStr.replace('喫茶', '');
                                         tempoStr = tempoStr.replace('洋食', '');
                                         tempoStr = tempoStr.replace('イタリアン', '');
-                                        tempoStr = tempoStr.replace('創作料理', '');
                                         tempoStr = tempoStr.replace('デザート', '');
                                         tempoStr = tempoStr.replace('喫茶', '');
                                         tempoStr = tempoStr.replace('ラーメン', '');
@@ -371,6 +370,10 @@ function shopComponent(array){ // 店ブロック挿入用関数
     for(let i = 0; i < tempoArray.length; i++){
         tempoArray[i].ジャンル = tempoArray[i].ジャンル.replace('和食', 'https://haniwa828.github.io/JapanGourmetDB/photo/japan.png')
         tempoArray[i].ジャンル = tempoArray[i].ジャンル.replace('中華', 'https://haniwa828.github.io/JapanGourmetDB/photo/china.png')
+        tempoArray[i].ジャンル = tempoArray[i].ジャンル.replace('イタリアン', 'https://haniwa828.github.io/JapanGourmetDB/photo/italy.png')
+        tempoArray[i].ジャンル = tempoArray[i].ジャンル.replace('喫茶', 'https://haniwa828.github.io/JapanGourmetDB/photo/cafe.png')
+        tempoArray[i].ジャンル = tempoArray[i].ジャンル.replace('デザート', 'https://haniwa828.github.io/JapanGourmetDB/photo/cake.png')
+        tempoArray[i].ジャンル = tempoArray[i].ジャンル.replace('ラーメン', 'https://haniwa828.github.io/JapanGourmetDB/photo/ramen.png')
 
         tempoArray[i].ジャンル = tempoArray[i].ジャンル.split(",");
     }
