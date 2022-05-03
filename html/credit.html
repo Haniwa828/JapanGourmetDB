@@ -35,32 +35,6 @@
   </head>
 
   <body onload="shopsDetail()">
-    <!-- オーバーレイ -->
-  <div id="overlay" class="overlay"></div>
-  <!-- モーダルウィンドウ1 -->
-    <div class="modal-window" data-id="modal1" id="modal1" style="overflow: auto;">
-        <p>目的の店名のコピーが推奨されます</p>
-        <input id="searchShop" type="text">
-        <button onclick="searchShop('searchShop')">検索</button>
-        <br><br>
-        <div id="forReviewLink1" style="height: 55%; overflow: auto;"></div>
-        <br>
-        <button class="js-close button-close button">戻る</button>
-        <a class="button" href="https://forms.gle/YUpxgStCMJSPURJbA" target="_blank">進む</a>
-    </div>
-   <!-- モーダルウィンドウ2 -->
-    <div class="modal-window" data-id="modal2">
-        <p>既出か確認して下さい</p>
-        <input id="searchShops" type="text">
-        <button onclick="searchShop('searchShops')">検索</button>
-        <br><br>
-        <div id="forReviewLink2" style="height: 55%; overflow: auto;"></div>
-        <br>
-        <button class="js-close button-close button">戻る</button>
-        <a class="button" href="https://forms.gle/3vwKDFyDjBiU6ypg9" target="_blank">進む</a>
-    </div>
-
-
     <div class="hamburger-menu">
       <input type="checkbox" id="menu-btn-check" />
       <label for="menu-btn-check" class="menu-btn"><span></span></label>
@@ -74,19 +48,16 @@
             <a href="https://haniwa828.github.io/JapanGourmetDB/html/announce.html?announceId=-1"  style="font-size: large;">お知らせ</a>
         </li>
         <li>
-            <div class="js-open button-open" data-id="2" style="font-size: large;">店舗投稿</div>
+            <a href="https://forms.gle/Zhvo9QcPjUVPpQyj6" target="_blank" style="font-size: large;">店舗投稿</a>
         </li>
         <li>
-            <div class="js-open button-open" data-id="1" style="font-size: large;">レビュー投稿</div>
+            <a href="https://forms.gle/YUpxgStCMJSPURJbA" target="_blank" style="font-size: large;">レビュー投稿</a>
         </li>
         <li>
           <a href="https://forms.gle/tx1ZhYPLLyBAw6ybA" target="_blank" style="font-size: large;">意見/修正依頼</a>
         </li>
         <li>
-          <a href="https://haniwa828.github.io/JapanGourmetDB/html/help.html"  style="font-size: large;">ヘルプ</a>
-        </li>
-        <li>
-          <a href="https://haniwa828.github.io/JapanGourmetDB/html/credit.html"  style="font-size: large;">クレジット</a>
+            <a href="https://haniwa828.github.io/JapanGourmetDB/html/help.html"  style="font-size: large;">ヘルプ</a>
         </li>
         </ul>
       </div>
@@ -97,7 +68,25 @@
       <img style="height: 50px;" src="https://haniwa828.github.io/JapanGourmetDB/photo/icon.png" style="width: 15vw;"> 日本グルメDB(仮)
     </div>
 
-    <div id="shop"></div>
+    <div style="margin: 10px;">
+        <div>使用ライブラリ</div>
+        <div>jQuery:</div>
+        <div>jQuery v3.4.1 | (c) JS Foundation and other contributors | jquery.org/license</div>
+        <div>&ensp;</div>
+        <div>Bootstrap:</div>
+        <div>Bootstrap v4.3.1 (https://getbootstrap.com/)
+            Copyright 2011-2019 The Bootstrap Authors
+            Copyright 2011-2019 Twitter, Inc.
+            Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)</div>
+        <div>&ensp;</div>
+        <div>参考にさせて頂いたサイト様</div>
+        <a href="https://pengi-n.co.jp/blog/modalwindow/#i-8">モーダルウィンドウの作り方</a><br>
+        <a href="https://www.asobou.co.jp/blog/web/css-menu">ハンバーガーメニューの作り方</a><br>
+        <a href="https://kinocolog.com/css_star_rating/">レートの星の作り方</a><br>
+        <a href="https://qiita.com/kingpanda/items/8e60a64dc2454f6ae6b5">スプレッドシートのデータ取得の方法</a>
+        <div>&ensp;</div>
+        <div>その他の素材、コードなどは全て自作です。</div>
+    </div>
 
     <!-- jQuery -->
     <script

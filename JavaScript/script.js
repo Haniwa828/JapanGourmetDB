@@ -443,10 +443,9 @@ function check(originalArray, word){ // 一致する要素の検索
                 (
                     (originalArray[i].ジャンル).indexOf(word[j]) != -1 
                     || (originalArray[i].店名.toUpperCase()).indexOf(word[j].toUpperCase()) != -1 
-                    || (originalArray[i].形式).indexOf(word[j]) != -1 
+                    // || (originalArray[i].形式).indexOf(word[j]) != -1 
                     || (originalArray[i].説明.toUpperCase()).indexOf(word[j].toUpperCase()) != -1 
                     || (originalArray[i].住所.toUpperCase()).indexOf(word[j].toUpperCase()) != -1 
-                    // || (originalArray[i].説明).indexOf(word[j]) != -1
                 ) 
                 && document.getElementById('shop' + i).style.display == 'block'
                 ){ // 一致する要素がある時ー!

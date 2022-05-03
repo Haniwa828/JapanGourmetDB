@@ -35,32 +35,6 @@
   </head>
 
   <body onload="shopsDetail()">
-    <!-- オーバーレイ -->
-  <div id="overlay" class="overlay"></div>
-  <!-- モーダルウィンドウ1 -->
-    <div class="modal-window" data-id="modal1" id="modal1" style="overflow: auto;">
-        <p>目的の店名のコピーが推奨されます</p>
-        <input id="searchShop" type="text">
-        <button onclick="searchShop('searchShop')">検索</button>
-        <br><br>
-        <div id="forReviewLink1" style="height: 55%; overflow: auto;"></div>
-        <br>
-        <button class="js-close button-close button">戻る</button>
-        <a class="button" href="https://forms.gle/YUpxgStCMJSPURJbA" target="_blank">進む</a>
-    </div>
-   <!-- モーダルウィンドウ2 -->
-    <div class="modal-window" data-id="modal2">
-        <p>既出か確認して下さい</p>
-        <input id="searchShops" type="text">
-        <button onclick="searchShop('searchShops')">検索</button>
-        <br><br>
-        <div id="forReviewLink2" style="height: 55%; overflow: auto;"></div>
-        <br>
-        <button class="js-close button-close button">戻る</button>
-        <a class="button" href="https://forms.gle/3vwKDFyDjBiU6ypg9" target="_blank">進む</a>
-    </div>
-
-
     <div class="hamburger-menu">
       <input type="checkbox" id="menu-btn-check" />
       <label for="menu-btn-check" class="menu-btn"><span></span></label>
@@ -74,19 +48,16 @@
             <a href="https://haniwa828.github.io/JapanGourmetDB/html/announce.html?announceId=-1"  style="font-size: large;">お知らせ</a>
         </li>
         <li>
-            <div class="js-open button-open" data-id="2" style="font-size: large;">店舗投稿</div>
+            <a href="https://forms.gle/Zhvo9QcPjUVPpQyj6" target="_blank" style="font-size: large;">店舗投稿</a>
         </li>
         <li>
-            <div class="js-open button-open" data-id="1" style="font-size: large;">レビュー投稿</div>
+            <a href="https://forms.gle/YUpxgStCMJSPURJbA" target="_blank" style="font-size: large;">レビュー投稿</a>
         </li>
         <li>
           <a href="https://forms.gle/tx1ZhYPLLyBAw6ybA" target="_blank" style="font-size: large;">意見/修正依頼</a>
         </li>
         <li>
-          <a href="https://haniwa828.github.io/JapanGourmetDB/html/help.html"  style="font-size: large;">ヘルプ</a>
-        </li>
-        <li>
-          <a href="https://haniwa828.github.io/JapanGourmetDB/html/credit.html"  style="font-size: large;">クレジット</a>
+            <a href="https://haniwa828.github.io/JapanGourmetDB/html/credit.html"  style="font-size: large;">クレジット</a>
         </li>
         </ul>
       </div>
@@ -97,7 +68,25 @@
       <img style="height: 50px;" src="https://haniwa828.github.io/JapanGourmetDB/photo/icon.png" style="width: 15vw;"> 日本グルメDB(仮)
     </div>
 
-    <div id="shop"></div>
+    <div style="margin: 10px;">
+        <div>Q1: 店追加の仕方</div>
+        <div>A1: 左上の三本線の場所からメニューを開き、「店舗投稿」を押すと専用のグーグルフォームに移動できます。移動前に確認画面が出ますが、店の被りが無いよう注意していただければ幸いです。また、本ページ及びお知らせページ、クレジットページからは確認画面が出ませんのでお気をつけ下さい。</div>
+        <a href="https://forms.gle/Zhvo9QcPjUVPpQyj6" target="_blank">https://forms.gle/Zhvo9QcPjUVPpQyj6</a>
+        <div>&ensp;</div>
+        <div>Q2: レビュー追加の仕方</div>
+        <div>A2: 左上の三本線の場所からメニューを開き、「レビュー投稿」を押すと専用のグーグルフォームに移動できます。移動前に確認画面が出ますが、目的の店名を事前にコピーし、正確に入力できるよう注意していただければ幸いです。また、本ページ及びお知らせページ、クレジットページからは確認画面が出ませんのでお気をつけ下さい。</div>
+        <a href="https://forms.gle/YUpxgStCMJSPURJbA" target="_blank">https://forms.gle/YUpxgStCMJSPURJbA</a>
+        <div>&ensp;</div>
+        <div>Q3: 感想、意見、修正依頼の仕方</div>
+        <div>A3: 左上の三本線の場所からメニューを開き、「意見/修正依頼」を押すと専用のグーグルフォームに移動できます。</div>
+        <a href="https://forms.gle/tx1ZhYPLLyBAw6ybA" target="_blank">https://forms.gle/tx1ZhYPLLyBAw6ybA</a>
+        <div>&ensp;</div>
+        <div>Q4: ワード検索機能の範囲</div>
+        <div>A4: ジャンル、店名、説明、住所にそのワードが含まれるかの判定をします。</div>
+        <div>&ensp;</div>
+        <div>Q5: 「別ページで開く」の使い方</div>
+        <div>A5: 別ページで開くとその店舗のみの情報が表示されたページに移動します。特定の店の情報を他の方に共有する場合や、保持しておきたい場合に活用いただければと思います。</div>
+    </div>
 
     <!-- jQuery -->
     <script
