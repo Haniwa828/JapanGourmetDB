@@ -4,6 +4,7 @@ function shopsDetail(){ //　メインページでの要素配置
     
     param = param.replace('%20', ' ');
     param = param.replace('%3%80%80', '　');
+    param = param.replace('aannddkkaarrii', '&');
 
     fetch(endpointReviews) // レビュー取得
     .then(response => response.json())

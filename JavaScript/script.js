@@ -526,6 +526,8 @@ function detailComponent(id, rArray, rsArray, sArray){
     reviewStr = review.toString(); // 評価を文字列に
     review = review - review%0.5;
 
+    let shopid = sArray[id].店名.replace('&', 'aannddkkaarrii')
+
     $('#container' + id).append(' \
         <div style="margin: 10px 0px 10px 0px;"> \
             <img id="mainImage'+ id +'" style="width: '+ width/1.5 +'px; height: '+ width/2 +'px; object-fit: contain;" src="'+ (sArray[id].写真)[0] +'"> \
@@ -570,7 +572,7 @@ function detailComponent(id, rArray, rsArray, sArray){
             '+ sArray[id].説明.replace(/\r?\n/g, '<br>') +' \
         </div> \
         <br> \
-        <a class="button" href="https://haniwa828.github.io/JapanGourmetDB/html/details.html?shopName='+ sArray[id].店名 +'" target="_blank">別ページで開く</a> \
+        <a class="button" href="https://haniwa828.github.io/JapanGourmetDB/html/details.html?shopName='+ shopid +'" target="_blank">別ページで開く</a> \
         <br> \
         <br> \
         <div style="margin: 0px 0px 10px 0px;"> \
